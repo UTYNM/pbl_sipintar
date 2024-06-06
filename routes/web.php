@@ -24,5 +24,8 @@ Route::get('DetailProdukPertanian', function () {
     return view('content/frontend/detail_produk_pertanian');
 });
 Route::get('login', function () {
-    return view('login');
+    return view('login_client');
+});
+Route::get('register', function () {
+    return view('register_client');
 });
