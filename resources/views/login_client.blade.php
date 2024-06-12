@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="frontend/login/css/iofrm-style.css">
     <link rel="stylesheet" type="text/css" href="frontend/login/css/iofrm-theme12.css">
 </head>
+
 <body>
     <div class="form-body">
         <div class="row">
@@ -27,11 +29,14 @@
                         <div class="page-links">
                             <a href="login" class="active">Login</a><a href="register">Register</a>
                         </div>
-                        <form>
-                            <input class="form-control" type="text" name="username" placeholder="E-mail Address" required>
-                            <input class="form-control" type="password" name="password" placeholder="Password" required>
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
+                            <input class="form-control" type="email" name="email" id="email" placeholder="E-mail Address"
+                                required>
+                            <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
                             <div class="form-button">
-                                <button id="submit" type="submit" class="ibtn">Login</button> <a href="forget12.html">Forget password?</a>
+                                <button id="submit" type="submit" class="ibtn">Login</button> 
+                                <a href="forget12.html">Forget password?</a>
                             </div>
                         </form>
                     </div>
@@ -39,9 +44,11 @@
             </div>
         </div>
     </div>
-<script src="frontend/login/js/jquery.min.js"></script>
-<script src="frontend/login/js/popper.min.js"></script>
-<script src="frontend/login/js/bootstrap.min.js"></script>
-<script src="frontend/login/js/main.js"></script>
+    <script src="frontend/login/js/jquery.min.js"></script>
+    <script src="frontend/login/js/popper.min.js"></script>
+    <script src="frontend/login/js/bootstrap.min.js"></script>
+    <script src="frontend/login/js/main.js"></script>
+    @include('sweetalert::alert')
 </body>
+
 </html>

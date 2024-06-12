@@ -1,5 +1,5 @@
-@extends('template.client')
-@section('content')
+    @extends('template.client')
+    @section('content')
        <!-- Start slider section -->
        <section class="hero__slider--section mb-60">
         <div class="hero__slider--inner hero__slider--activation swiper">

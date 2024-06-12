@@ -155,7 +155,7 @@
                         </div>
 
                     </div>
-                    <div class="product__view--mode__list">
+                    {{-- <div class="product__view--mode__list">
                         <div class="product__tab--one product__grid--column__buttons d-flex justify-content-center">
                             <button class="product__grid--column__buttons--icons active" aria-label="grid btn"
                                 data-toggle="tab" data-target="#product_grid">
@@ -201,7 +201,7 @@
                                 </svg>
                             </button>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="product__view--mode__list product__view--search d-xl-block d-none ">
                         <form class="product__view--search__form" action="#">
                             <label>
@@ -354,7 +354,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="product__items--content product__items2--content text-center">
-                                                    <a class="add__to--cart__btn" href="{{ route('cart') }}">+ Tambah Ke Keranjang</a>
+                                                    <a class="add__to--cart__btn">+ Tambah Ke Keranjang</a>
                                                     <h3 class="product__items--content__title h4"><a href="{{ route('products.show', $product->id) }}">{{ $product->product_name }}</a></h3>
                                                     <div class="product__items--price">
                                                         <span class="current__price">Rp {{ number_format($product->price, 0, ',', '.') }}/kg</span>
@@ -365,7 +365,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
                                         @endforeach
                                     </div>
                                 </div>

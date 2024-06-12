@@ -9,11 +9,11 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="product__media--preview__items">
-                                    <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="frontend/img/naga.png">
-                                        <img class="product__media--preview__items--img" src="frontend/img/naga.png" alt="product-media-img">
+                                    <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="{{ asset('frontend/img/naga.png')}}">
+                                        <img class="product__media--preview__items--img" src="{{ asset('frontend/img/naga.png')}}" alt="product-media-img">
                                     </a>
                                     <div class="product__media--view__icon">
-                                        <a class="product__media--view__icon--link glightbox" href="frontend/img/naga.png" data-gallery="product-media-preview">
+                                        <a class="product__media--view__icon--link glightbox" href="{{ asset('frontend/img/naga.png')}}" data-gallery="product-media-preview">
                                             <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
                                             <span class="visually-hidden">product view</span> 
                                         </a>
@@ -22,61 +22,59 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="product__media--preview__items">
-                                    <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="frontend/img/naga-1.png"><img class="product__media--preview__items--img" src="frontend/img/naga-1.png" alt="product-media-img"></a>
+                                    <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="{{ asset('frontend/img/naga.png')}}">
+                                        <img class="product__media--preview__items--img" src="{{ asset('frontend/img/naga.png')}}" alt="product-media-img">
+                                    </a>
                                     <div class="product__media--view__icon">
-                                        <a class="product__media--view__icon--link glightbox" href="frontend/img/naga-1.png" data-gallery="product-media-preview">
+                                        <a class="product__media--view__icon--link glightbox" href="{{ asset('frontend/img/naga.png')}}" data-gallery="product-media-preview">
                                             <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
-                                            <span class="visually-hidden">product view</span>
+                                            <span class="visually-hidden">product view</span> 
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="product__media--preview__items">
-                                    <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="frontend/img/product/big-product3.jpg"><img class="product__media--preview__items--img" src="frontend/img/product/big-product3.jpg" alt="product-media-img"></a>
+                                    <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="{{ asset('frontend/img/naga.png')}}">
+                                        <img class="product__media--preview__items--img" src="{{ asset('frontend/img/naga.png')}}" alt="product-media-img">
+                                    </a>
                                     <div class="product__media--view__icon">
-                                        <a class="product__media--view__icon--link glightbox" href="frontend/img/product/big-product3.jpg" data-gallery="product-media-preview">
+                                        <a class="product__media--view__icon--link glightbox" href="{{ asset('frontend/img/naga.png')}}" data-gallery="product-media-preview">
                                             <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
-                                            <span class="visually-hidden">product view</span>
+                                            <span class="visually-hidden">product view</span> 
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="product__media--preview__items">
-                                    <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="frontend/img/product/big-product4.jpg"><img class="product__media--preview__items--img" src="frontend/img/product/big-product4.jpg" alt="product-media-img"></a>
+                                    <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="{{ asset('frontend/img/naga.png')}}">
+                                        <img class="product__media--preview__items--img" src="{{ asset('frontend/img/naga.png')}}" alt="product-media-img">
+                                    </a>
                                     <div class="product__media--view__icon">
-                                        <a class="product__media--view__icon--link glightbox" href="frontend/img/product/big-product4.jpg" data-gallery="product-media-preview">
+                                        <a class="product__media--view__icon--link glightbox" href="{{ asset('frontend/img/naga.png')}}" data-gallery="product-media-preview">
                                             <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
-                                            <span class="visually-hidden">product view</span>
+                                            <span class="visually-hidden">product view</span> 
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="product__media--preview__items">
-                                    <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="frontend/img/product/big-product5.jpg"><img class="product__media--preview__items--img" src="frontend/img/product/big-product5.jpg" alt="product-media-img"></a>
+                                    <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="{{ asset('frontend/img/naga.png')}}">
+                                        <img class="product__media--preview__items--img" src="{{ asset('frontend/img/naga.png')}}" alt="product-media-img">
+                                    </a>
                                     <div class="product__media--view__icon">
-                                        <a class="product__media--view__icon--link glightbox" href="frontend/img/product/big-product5.jpg" data-gallery="product-media-preview">
+                                        <a class="product__media--view__icon--link glightbox" href="{{ asset('frontend/img/naga.png')}}" data-gallery="product-media-preview">
                                             <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
-                                            <span class="visually-hidden">product view</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product__media--preview__items">
-                                    <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="frontend/img/product/big-product6.jpg"><img class="product__media--preview__items--img" src="frontend/img/product/big-product6.jpg" alt="product-media-img"></a>
-                                    <div class="product__media--view__icon">
-                                        <a class="product__media--view__icon--link glightbox" href="frontend/img/product/big-product6.jpg" data-gallery="product-media-preview">
-                                            <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
-                                            <span class="visually-hidden">product view</span>
+                                            <span class="visually-hidden">product view</span> 
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Add Pagination -->
                     <div class="product__media--nav swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -105,136 +103,34 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper__nav--btn swiper-button-next"></div>
-                        <div class="swiper__nav--btn swiper-button-prev"></div>
+                    <div class="swiper__nav--btn swiper-button-next"></div>
+                    <div class="swiper__nav--btn swiper-button-prev"></div>
                     </div>
                 </div>
             </div>   
             <div class="col">
                 <div class="product__details--info">
                     <form action="#">
-                        <h2 class="product__details--info__title mb-15">Buah Naga</h2>
+                        <h2 class="product__details--info__title mb-15">{{ $product->product_name }}</h2>
                         <div class="product__details--info__price mb-15">
-                            <span class="current__price">Rp 20.000/Kg</span>
-                            
-                            {{-- <span class="old__price">$68.00</span> --}}
-                          
-
+                            <span class="current__price">Rp {{ $product->price }}/Kg</span>
                         </div>
-                        <p class="text__primary"><strong>Stok: 80Kg</strong>  </p>
-                        {{-- <div class="product__items--rating d-flex align-items-center mb-15">
-                            <ul class="d-flex">
-                                <li class="product__items--rating__list">
-                                    <span class="product__items--rating__icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16.105" height="14.732" viewBox="0 0 10.105 9.732">
-                                        <path  data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"/>
-                                        </svg>
-                                    </span>
-                                </li>
-                                <li class="product__items--rating__list">
-                                    <span class="product__items--rating__icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16.105" height="14.732" viewBox="0 0 10.105 9.732">
-                                        <path  data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"/>
-                                        </svg>
-                                    </span>
-                                </li>
-                                <li class="product__items--rating__list">
-                                    <span class="product__items--rating__icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16.105" height="14.732" viewBox="0 0 10.105 9.732">
-                                        <path  data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"/>
-                                        </svg>
-                                    </span>
-                                </li>
-                                <li class="product__items--rating__list">
-                                    <span class="product__items--rating__icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16.105" height="14.732" viewBox="0 0 10.105 9.732">
-                                        <path  data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"/>
-                                        </svg>
-                                    </span>
-                                </li>
-                                <li class="product__items--rating__list">
-                                    <span class="product__items--rating__icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16.105" height="14.732" viewBox="0 0 10.105 9.732">
-                                            <path  data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="#c7c5c2"/>
-                                        </svg> 
-                                    </span>
-                                </li>
-                            </ul>
-                            <span class="product__items--rating__count--number">(24)</span>
-                        </div> --}}
-                        <p class="product__details--info__desc mb-20">
-
-                            Buah naga memiliki tekstur yang renyah dan segar, mirip dengan pepaya. Kombinasi rasa manis dan sedikit krispinya membuatnya menjadi tambahan yang menyegarkan dalam salad buah, smoothie, atau dimakan langsung sebagai camilan. Selain rasanya yang enak, buah naga juga kaya akan serat, vitamin C, antioksidan, dan nutrisi lainnya, menjadikannya buah yang populer di banyak pasar buah di seluruh dunia.</p>
-                        <div class="product__variant">
-                            <div class="product__variant--list mb-10">
-                                {{-- <fieldset class="variant__input--fieldset">
-                                    <legend class="product__variant--title mb-8">Color :</legend>
-                                    <div class="variant__color d-flex">
-                                        <div class="variant__color--list">
-                                            <input id="color-red1" name="color" type="radio" checked>
-                                            <label class="variant__color--value red" for="color-red1" title="Red"><img class="variant__color--value__img" src="frontend/img/product/product1.png" alt="variant-color-img"></label>
-                                        </div>
-                                        <div class="variant__color--list">
-                                            <input id="color-red2" name="color" type="radio">
-                                            <label class="variant__color--value red" for="color-red2" title="Black"><img class="variant__color--value__img" src="frontend/img/product/product2.png" alt="variant-color-img"></label>
-                                        </div>
-                                        <div class="variant__color--list">
-                                            <input id="color-red3" name="color" type="radio">
-                                            <label class="variant__color--value red" for="color-red3" title="Pink"><img class="variant__color--value__img" src="frontend/img/product/product3.png" alt="variant-color-img"></label>
-                                        </div>
-                                        <div class="variant__color--list">
-                                            <input id="color-red4" name="color" type="radio">
-                                            <label class="variant__color--value red" for="color-red4" title="Orange"><img class="variant__color--value__img" src="frontend/img/product/product4.png" alt="variant-color-img"></label>
-                                        </div>
-                                    </div>
-                                </fieldset> --}}
+                        <p class="text__primary"><strong>Stok: {{ $product->stock }} Kg</strong></p>
+                        <p class="product__details--info__desc mb-20">{{ $product->description }}</p>
+                        <div class="product__variant--list mb-15">
+                            <div class="product__details--info__meta">
+                                <p class="product__details--info__meta--list"><strong>Penjual:</strong> <span>{{ $product->seller->name }}</span></p>
+                                <p class="product__details--info__meta--list"><strong>Kategori:</strong> <span>{{ $product->category->category_name }}</span></p>
+                                <p class="product__details--info__meta--list"><strong>Alamat:</strong> <span>{{ $product->address }}</span></p>
+                                <p class="product__details--info__meta--list"><strong>No Whatsapp:</strong> <span>{{ $product->phone }}</span></p>
                             </div>
-                            {{-- <div class="product__variant--list mb-20">
-                                <fieldset class="variant__input--fieldset">
-                                    <legend class="product__variant--title mb-8">Weight :</legend>
-                                    <ul class="variant__size d-flex">
-                                        <li class="variant__size--list">
-                                            <input id="weight1" name="weight" type="radio" checked>
-                                            <label class="variant__size--value red" for="weight1">5 kg</label>
-                                        </li>
-                                        <li class="variant__size--list">
-                                            <input id="weight2" name="weight" type="radio">
-                                            <label class="variant__size--value red" for="weight2">3 kg</label>
-                                        </li>
-                                        <li class="variant__size--list">
-                                            <input id="weight3" name="weight" type="radio">
-                                            <label class="variant__size--value red" for="weight3">2 kg</label>
-                                        </li>
-                                    </ul>
-                                </fieldset>
-                            </div>
-                            <div class="product__variant--list quantity d-flex align-items-center mb-20">
-                                <div class="quantity__box">
-                                    <button type="button" class="quantity__value quickview__value--quantity decrease" aria-label="quantity value" value="Decrease Value">-</button>
-                                    <label>
-                                        <input type="number" class="quantity__number quickview__value--number" value="1" data-counter />
-                                    </label>
-                                    <button type="button" class="quantity__value quickview__value--quantity increase" aria-label="quantity value" value="Increase Value">+</button>
-                                </div>
-                                <button class="btn quickview__cart--btn" type="submit">Add To Cart</button>  
-                            </div> --}}
-                           
-                            <div class="product__variant--list mb-15">
-                                <div class="product__details--info__meta">
-                                    <p class="product__details--info__meta--list"><strong>Penjual:</strong>  <span>Amat Yanto</span> </p>
-                                    <p class="product__details--info__meta--list"><strong>Kategori:</strong>  <span>Pertanian</span> </p>
-                                    <p class="product__details--info__meta--list"><strong>Alamat:</strong>  <span>Jl. Cempaka Putih No. 10, Kec. Cempaka Putih, Ketapang    </span> </p>
-                                    <p class="product__details--info__meta--list"><strong>No Whatsapp:</strong>  <span>0896-8765-4321</span> </p>
-
-                                </div>
-                            </div>
-                            <div class="product__variant--list mb-15">
-                                <a class="variant__wishlist--icon mb-15" href="wishlist.html" title="Add to wishlist">
-                                    <svg class="quickview__variant--wishlist__svg" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
-                                    Tambah Ke Favorit
-                                </a>
-                                <button class="variant__buy--now__btn btn" type="submit">Hubungi Penjual</button>
-                            </div>
+                        </div>
+                        <div class="product__variant--list mb-15">
+                            <a class="variant__wishlist--icon mb-15" href="wishlist.html" title="Add to wishlist">
+                                <svg class="quickview__variant--wishlist__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+                                Tambah Ke Favorit
+                            </a>
+                            <button class="variant__buy--now__btn btn" type="submit">Hubungi Penjual</button>
                         </div>
                         <div class="quickview__social d-flex align-items-center mb-15">
                             <label class="quickview__social--title">Bagikan:</label>
@@ -958,5 +854,6 @@
         </div>
     </div>
 </section>
+
 <!-- End product section -->
 @endsection
