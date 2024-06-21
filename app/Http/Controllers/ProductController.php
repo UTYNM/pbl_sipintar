@@ -11,18 +11,18 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    // public function create()
-    // {
-    //     $categories = Category::all(); // Mengambil semua kategori dari database
-    //     return view('content/frontend/tambah', compact('categories'));
-    // }
+    public function create()
+    {
+        $categories = Category::all(); // Mengambil semua kategori dari database
+        return view('content/frontend/tambah', compact('categories'));
+    }
 
     public function index()
-{
-    $user = Auth::user(); // Mendapatkan informasi pengguna yang sedang masuk
-    $products = Product::where('user_id', $user->id)->get(); // Mengambil produk yang dimiliki oleh pengguna
-    return view('content.frontend.akun', compact('products'));
-}
+    {
+        $user = Auth::user(); // Mendapatkan informasi pengguna yang sedang masuk
+        $products = Product::where('user_id', $user->id)->get(); // Mengambil produk yang dimiliki oleh pengguna
+        return view('content.frontend.akun', compact('products'));
+    }
 
     public function store(Request $request)
     {
@@ -77,10 +77,14 @@ class ProductController extends Controller
         imagecopyresampled(
             $croppedImage,
             $image,
-            0, 0, // dst_x, dst_y
-            0, 0, // src_x, src_y
-            $width, $height, // dst_width, dst_height
-            $originalWidth, $originalHeight // src_width, src_height
+            0,
+            0, // dst_x, dst_y
+            0,
+            0, // src_x, src_y
+            $width,
+            $height, // dst_width, dst_height
+            $originalWidth,
+            $originalHeight // src_width, src_height
         );
 
         return $croppedImage;
@@ -157,9 +161,12 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::with('photos', 'category', 'seller')->findOrFail($id);
+        $relatedProducts = Product::where('category_id', $product->category_id)
+        ->where('id', '!=', $product->id)
+        ->limit(5)
+        ->get();
 
-        
-        return view('content/frontend/detail_produk', compact('product'));
+        return view('content/frontend/detail_produk', compact('product', 'relatedProducts'));
     }
     public function destroy($id)
     {

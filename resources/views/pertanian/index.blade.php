@@ -1,22 +1,5 @@
 @extends('template.client')
 @section('content')
-    {{-- <!-- Start breadcrumb section -->
-<section class="breadcrumb__section breadcrumb__bg">
-    <div class="container">
-        <div class="row row-cols-1">
-            <div class="col">
-                <div class="breadcrumb__content text-center">
-                    <h1 class="breadcrumb__content--title text-white mb-25">Hasil Pertanian</h1>
-                    <ul class="breadcrumb__content--menu d-flex justify-content-center">
-                        <li class="breadcrumb__content--menu__items"><a class="text-white" href="index.html">Home</a></li>
-                        <li class="breadcrumb__content--menu__items"><span class="text-white">Shop Left Sidebar</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> --}}
-    <!-- End breadcrumb section -->
 
     <!-- Start offcanvas filter sidebar -->
     <div class="offcanvas__filter--sidebar widget__area">
@@ -28,12 +11,12 @@
         </button>
         <div class="offcanvas__filter--sidebar__inner">
             <div class="single__widget widget__bg">
-                <h2 class="widget__title h3">Kategori Hasil Pertanian</h2>
+                <h2 class="widget__title h3">Category Type Name</h2>
                 <ul class="widget__form--check">
                     <li class="widget__form--check__list">
                         <label class="widget__form--check__label" for="check1">Tanaman Pangan</label>
                         <input class="widget__form--check__input" id="check1" type="checkbox">
-                        <span class="widget__form--checkmark"></span>
+                        <span class="dget__form--checkmark"></span>
                     </li>
                     <li class="widget__form--check__list">
                         <label class="widget__form--check__label" for="check2">Sayur - Sayuran</label>
@@ -54,60 +37,6 @@
                         <label class="widget__form--check__label" for="check5">Rempah - Rempahan</label>
                         <input class="widget__form--check__input" id="check5" type="checkbox">
                         <span class="widget__form--checkmark"></span>
-                    </li>
-                </ul>
-            </div>
-            <div class="single__widget price__filter widget__bg">
-                <h2 class="widget__title h3">Harga</h2>
-                <form class="price__filter--form" action="#">
-                    <div class="price__filter--form__inner mb-15 d-flex align-items-center">
-                        <div class="price__filter--group">
-                            <label class="price__filter--label" for="Filter-Price-GTE2">Minimal</label>
-                            <div class="price__filter--input border-radius-5 d-flex align-items-center">
-                                <span class="price__filter--currency">Rp</span>
-                                <input class="price__filter--input__field border-0" name="filter.v.price.gte"
-                                    id="Filter-Price-GTE2" type="number" placeholder="0" min="0" max="250.00">
-                            </div>
-                        </div>
-                        <div class="price__divider">
-                            <span>-</span>
-                        </div>
-                        <div class="price__filter--group">
-                            <label class="price__filter--label" for="Filter-Price-LTE2">Maksimal</label>
-                            <div class="price__filter--input border-radius-5 d-flex align-items-center">
-                                <span class="price__filter--currency">Rp</span>
-                                <input class="price__filter--input__field border-0" name="filter.v.price.lte"
-                                    id="Filter-Price-LTE2" type="number" min="0" placeholder="100.000"
-                                    max="250.00">
-                            </div>
-                        </div>
-                    </div>
-                    <button class="btn price__filter--btn" type="submit">Filter</button>
-                </form>
-            </div>
-            <div class="single__widget widget__bg">
-                <h2 class="widget__title h3">Lokasi</h2>
-                <ul class="widget__tagcloud">
-                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Air
-                            Upas</a></li>
-                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Benua Kayong</a>
-                    </li>
-                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Delta Pawan</a>
-                    </li>
-                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Hulu Sungai</a>
-                    </li>
-                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Jelai Hulu</a>
-                    </li>
-                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Kendawangan</a>
-                    </li>
-                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Manis Mata</a>
-                    </li>
-                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Marau</a></li>
-                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Matan Hilir
-                            Selatan</a></li>
-                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Matan Hilir
-                            Utara</a></li>
-                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Muara Pawan</a>
                     </li>
                 </ul>
             </div>
@@ -155,53 +84,7 @@
                         </div>
 
                     </div>
-                    {{-- <div class="product__view--mode__list">
-                        <div class="product__tab--one product__grid--column__buttons d-flex justify-content-center">
-                            <button class="product__grid--column__buttons--icons active" aria-label="grid btn"
-                                data-toggle="tab" data-target="#product_grid">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 9 9">
-                                    <g transform="translate(-1360 -479)">
-                                        <rect id="Rectangle_5725" data-name="Rectangle 5725" width="4"
-                                            height="4" transform="translate(1360 479)" fill="currentColor" />
-                                        <rect id="Rectangle_5727" data-name="Rectangle 5727" width="4"
-                                            height="4" transform="translate(1360 484)" fill="currentColor" />
-                                        <rect id="Rectangle_5726" data-name="Rectangle 5726" width="4"
-                                            height="4" transform="translate(1365 479)" fill="currentColor" />
-                                        <rect id="Rectangle_5728" data-name="Rectangle 5728" width="4"
-                                            height="4" transform="translate(1365 484)" fill="currentColor" />
-                                    </g>
-                                </svg>
-                            </button>
-                            <button class="product__grid--column__buttons--icons" aria-label="list btn" data-toggle="tab"
-                                data-target="#product_list">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16"
-                                    viewBox="0 0 13 8">
-                                    <g id="Group_14700" data-name="Group 14700" transform="translate(-1376 -478)">
-                                        <g transform="translate(12 -2)">
-                                            <g id="Group_1326" data-name="Group 1326">
-                                                <rect id="Rectangle_5729" data-name="Rectangle 5729" width="3"
-                                                    height="2" transform="translate(1364 483)" fill="currentColor" />
-                                                <rect id="Rectangle_5730" data-name="Rectangle 5730" width="9"
-                                                    height="2" transform="translate(1368 483)" fill="currentColor" />
-                                            </g>
-                                            <g id="Group_1328" data-name="Group 1328" transform="translate(0 -3)">
-                                                <rect id="Rectangle_5729-2" data-name="Rectangle 5729" width="3"
-                                                    height="2" transform="translate(1364 483)" fill="currentColor" />
-                                                <rect id="Rectangle_5730-2" data-name="Rectangle 5730" width="9"
-                                                    height="2" transform="translate(1368 483)" fill="currentColor" />
-                                            </g>
-                                            <g id="Group_1327" data-name="Group 1327" transform="translate(0 -1)">
-                                                <rect id="Rectangle_5731" data-name="Rectangle 5731" width="3"
-                                                    height="2" transform="translate(1364 487)" fill="currentColor" />
-                                                <rect id="Rectangle_5732" data-name="Rectangle 5732" width="9"
-                                                    height="2" transform="translate(1368 487)" fill="currentColor" />
-                                            </g>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </button>
-                        </div>
-                    </div> --}}
+              
                     <div class="product__view--mode__list product__view--search d-xl-block d-none ">
                         <form class="product__view--search__form" action="#">
                             <label>
@@ -332,26 +215,6 @@
                                                             <img class="product__items--img product__secondary--img" src="{{ asset('frontend/img/padi-1.png') }}" alt="{{ $product->product_name }}">
                                                         @endif
                                                     </a>
-                                                    <div class="product__badge">
-                                                        <!-- Tambahkan badge atau label jika diperlukan -->
-                                                    </div>
-                                                    <ul class="product__items--action">
-                                                        <li class="product__items--action__list">
-                                                            {{-- <a class="product__items--action__btn" href="{{ route('wishlist') }}"> --}}
-                                                                <!-- Tambahkan SVG atau ikon untuk tombol Wishlist -->
-                                                            </a>
-                                                        </li>
-                                                        <li class="product__items--action__list">
-                                                            {{-- <a class="product__items--action__btn" data-open="modal1" href="{{ route('quickview') }}"> --}}
-                                                                <!-- Tambahkan SVG atau ikon untuk tombol Quick View -->
-                                                            </a>
-                                                        </li>
-                                                        <li class="product__items--action__list">
-                                                            {{-- <a class="product__items--action__btn" href="{{ route('compare') }}"> --}}
-                                                                <!-- Tambahkan SVG atau ikon untuk tombol Compare -->
-                                                            </a>
-                                                        </li>
-                                                    </ul>
                                                 </div>
                                                 <div class="product__items--content product__items2--content text-center">
                                                     <a class="add__to--cart__btn">+ Tambah Ke Keranjang</a>
@@ -413,3 +276,57 @@
     </section>
     <!-- End shop section -->
 @endsection
+{{-- <div class="single__widget price__filter widget__bg">
+    <h2 class="widget__title h3">Harga</h2>
+    <form class="price__filter--form" action="#">
+        <div class="price__filter--form__inner mb-15 d-flex align-items-center">
+            <div class="price__filter--group">
+                <label class="price__filter--label" for="Filter-Price-GTE2">Minimal</label>
+                <div class="price__filter--input border-radius-5 d-flex align-items-center">
+                    <span class="price__filter--currency">Rp</span>
+                    <input class="price__filter--input__field border-0" name="filter.v.price.gte"
+                        id="Filter-Price-GTE2" type="number" placeholder="0" min="0" max="250.00">
+                </div>
+            </div>
+            <div class="price__divider">
+                <span>-</span>
+            </div>
+            <div class="price__filter--group">
+                <label class="price__filter--label" for="Filter-Price-LTE2">Maksimal</label>
+                <div class="price__filter--input border-radius-5 d-flex align-items-center">
+                    <span class="price__filter--currency">Rp</span>
+                    <input class="price__filter--input__field border-0" name="filter.v.price.lte"
+                        id="Filter-Price-LTE2" type="number" min="0" placeholder="100.000"
+                        max="250.00">
+                </div>
+            </div>
+        </div>
+        <button class="btn price__filter--btn" type="submit">Filter</button>
+    </form>
+</div>
+<div class="single__widget widget__bg">
+    <h2 class="widget__title h3">Lokasi</h2>
+    <ul class="widget__tagcloud">
+        <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Air
+                Upas</a></li>
+        <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Benua Kayong</a>
+        </li>
+        <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Delta Pawan</a>
+        </li>
+        <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Hulu Sungai</a>
+        </li>
+        <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Jelai Hulu</a>
+        </li>
+        <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Kendawangan</a>
+        </li>
+        <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Manis Mata</a>
+        </li>
+        <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Marau</a></li>
+        <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Matan Hilir
+                Selatan</a></li>
+        <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Matan Hilir
+                Utara</a></li>
+        <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Muara Pawan</a>
+        </li>
+    </ul>
+</div> --}}
