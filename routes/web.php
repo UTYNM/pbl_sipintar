@@ -14,21 +14,12 @@ Route::get('register', [RegisterController::class, 'showRegistrationForm'])->nam
 Route::post('register', [RegisterController::class, 'register']);
 
 
-use App\Http\Controllers\ProductFilterController;
-
 Route::middleware(['auth'])->group(function () {
-        Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
-        Route::post('/products', [ProductController::class, 'store'])->name('products.store');
-        Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
-        Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
-        Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
+       Route::resource('products', ProductController::class);
+
         Route::get('/get-category-types/{category_id}', [ProductController::class, 'getCategoryTypes']);
-        Route::get('/products/filterByCategoryType', [PertanianController::class, 'filterByCategoryType'])->name('products.filterByCategoryType');
-
-        Route::get('/products', [ProductFilterController::class, 'index'])->name('products.index');
-        Route::get('/products/filter', [ProductFilterController::class, 'filterByCategoryType'])->name('products.filterByCategoryType');        
-
-    Route::resource('pertanian', PertanianController::class);
+        
+        Route::resource('pertanian', PertanianController::class);
     
     Route::get('/akun', [ProductController::class, 'index'])->name('products.index');
 
