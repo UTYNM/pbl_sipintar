@@ -78,6 +78,14 @@
                         <label class="product__view--label">Urutkan :</label>
                         <div class="select shop__header--select">
                             <form id="sortForm" method="GET" action="{{ route('pertanian.index') }}">
+                                <!-- Preserve existing query parameters -->
+                                <input type="hidden" name="search" value="{{ request('search') }}">
+                                @if (is_array(request('type_name')))
+                                    @foreach (request('type_name') as $typeName)
+                                        <input type="hidden" name="type_name[]" value="{{ $typeName }}">
+                                    @endforeach
+                                @endif
+                    
                                 <select class="product__view--select" name="sort_order" id="sortOrder">
                                     <option value="newest" {{ $sortOrder === 'newest' ? 'selected' : '' }}>Terbaru</option>
                                     <option value="oldest" {{ $sortOrder === 'oldest' ? 'selected' : '' }}>Terlama</option>
@@ -85,6 +93,7 @@
                             </form>
                         </div>
                     </div>
+                    
                     
 
                     <div class="product__view--mode__list product__view--search d-xl-block d-none">
@@ -325,7 +334,7 @@
                 $(this).closest('form').submit();
             });
             $('#sortOrder').change(function() {
-                $('#filterForm').submit();
+                $('#sortForm').submit();
             });
         });
     </script>
