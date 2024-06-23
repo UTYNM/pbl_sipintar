@@ -6,16 +6,24 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductPhoto;
 use App\Models\Category; // Tambahkan ini untuk memuat model Category
+use App\Models\CategoryType;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
     public function create()
-    {
-        $categories = Category::all(); // Mengambil semua kategori dari database
-        return view('content/frontend/tambah', compact('categories'));
-    }
+{
+    $categories = Category::all(); // Mengambil semua kategori dari database
+    $category_types = CategoryType::all(); // Mengambil semua sub kategori dari database
+    return view('content/frontend/tambah', compact('categories', 'category_types'));
+}
+
+public function getCategoryTypes($categoryId)
+{
+    $categoryTypes = CategoryType::where('category_id', $categoryId)->get();
+    return response()->json($categoryTypes);
+}
 
     public function index()
     {
@@ -29,6 +37,7 @@ class ProductController extends Controller
         $request->validate([
             'product_name' => 'required|string|max:255',
             'category_id' => 'required|integer|exists:categories,id',
+            'category_type_id' => 'required|integer|exists:category_types,id',
             'description' => 'nullable|string',
             'price' => 'required|numeric',
             'stock' => 'required|integer',
@@ -39,6 +48,7 @@ class ProductController extends Controller
         $product = new Product;
         $product->user_id = Auth::id();
         $product->category_id = $request->category_id;
+        $product->category_type_id = $request->category_type_id;
         $product->product_name = $request->product_name;
         $product->description = $request->description;
         $product->price = $request->price;
@@ -121,6 +131,7 @@ class ProductController extends Controller
         $request->validate([
             'product_name' => 'required|string|max:255',
             'category_id' => 'required|integer|exists:categories,id',
+            'category_type_id' => 'required|integer|exists:category_types,id',
             'description' => 'nullable|string',
             'price' => 'required|numeric',
             'stock' => 'required|integer',
@@ -129,6 +140,7 @@ class ProductController extends Controller
 
         $product = Product::findOrFail($id);
         $product->category_id = $request->category_id;
+        $product->category_type_id = $request->category_type_id;
         $product->product_name = $request->product_name;
         $product->description = $request->description;
         $product->price = $request->price;
@@ -162,9 +174,9 @@ class ProductController extends Controller
     {
         $product = Product::with('photos', 'category', 'seller')->findOrFail($id);
         $relatedProducts = Product::where('category_id', $product->category_id)
-        ->where('id', '!=', $product->id)
-        ->limit(5)
-        ->get();
+            ->where('id', '!=', $product->id)
+            ->limit(5)
+            ->get();
 
         return view('content/frontend/detail_produk', compact('product', 'relatedProducts'));
     }
