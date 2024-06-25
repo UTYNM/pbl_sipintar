@@ -7,12 +7,12 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\CategoryType;
 
-class PertanianController extends Controller
+class PerikananController extends Controller
 {
     public function index(Request $request)
     {
         // Specify the category_name to filter category types
-        $specificCategoryName = 'pertanian';
+        $specificCategoryName = 'perikanan';
     
         // Retrieve the category with the specified category_name
         $category = Category::where('category_name', $specificCategoryName)->first();
@@ -54,7 +54,7 @@ class PertanianController extends Controller
             $products = $productsQuery->orderBy('created_at', 'asc')->paginate(12); // 10 items per page
         }
     
-        return view('content.frontend.pertanian', compact('products', 'categoryTypes', 'selectedTypeNames', 'searchQuery', 'sortOrder'));
+        return view('content.frontend.perikanan', compact('products', 'categoryTypes', 'selectedTypeNames', 'searchQuery', 'sortOrder'));
     }
     
 }
