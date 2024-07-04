@@ -15,7 +15,7 @@
                     <nav class="header__menu--navigation">
                         <ul class="d-flex">
                             <li class="header__menu--items">
-                                <a class="header__menu--link" href="beranda">Beranda 
+                                <a class="header__menu--link" href="/beranda">Beranda 
                                 
                                 </a>
                          

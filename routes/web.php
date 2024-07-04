@@ -6,6 +6,7 @@ use App\Http\Controllers\PerikananController;
 use App\Http\Controllers\PertanianController;
 use App\Http\Controllers\PeternakanController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\BerandaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -24,9 +25,8 @@ Route::middleware(['auth'])->group(function () {
     // Ubah nama rute untuk /akun menjadi unik
     Route::get('/profil', [ProductController::class, 'index'])->name('akun.index');
 
-    Route::get('beranda', function () {
-        return view('content/frontend/beranda');
-    });
+    Route::get('/beranda', [BerandaController::class, 'index'])->name('beranda.index');
+
     // Route::get('peternakan', function () {
     //     return view('content/frontend/peternakan');
     // });
