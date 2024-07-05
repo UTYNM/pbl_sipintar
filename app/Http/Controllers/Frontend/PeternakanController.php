@@ -1,18 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Frontend;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\CategoryType;
 
-class PerikananController extends Controller
+class PeternakanController extends Controller
 {
     public function index(Request $request)
     {
         // Specify the category_name to filter category types
-        $specificCategoryName = 'perikanan';
+        $specificCategoryName = 'peternakan';
     
         // Retrieve the category with the specified category_name
         $category = Category::where('category_name', $specificCategoryName)->first();
@@ -54,7 +55,7 @@ class PerikananController extends Controller
             $products = $productsQuery->orderBy('created_at', 'asc')->paginate(12); // 10 items per page
         }
     
-        return view('content.frontend.perikanan', compact('products', 'categoryTypes', 'selectedTypeNames', 'searchQuery', 'sortOrder'));
+        return view('content.frontend.peternakan', compact('products', 'categoryTypes', 'selectedTypeNames', 'searchQuery', 'sortOrder'));
     }
     
 }
