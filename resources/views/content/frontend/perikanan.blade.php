@@ -120,8 +120,8 @@
                 <div class="col-xl-3 col-lg-4">
                     <div class="shop__sidebar--widget widget__area d-none d-lg-block">
                         <div class="single__widget widget__bg">
-                            <h2 class="widget__title h3">Kategori Hasil Pertanian</h2>
-                            <form id="sortForm" method="GET" action="{{ route('perikanan.index') }}">
+                            <h2 class="widget__title h3">Kategori Hasil Perikanan</h2>
+                            <form id="filterForm" method="GET" action="{{ route('perikanan.index') }}">
                                 <ul class="widget__form--check">
                                     @foreach ($categoryTypes as $categoryType)
                                         <li class="widget__form--check__list">
@@ -310,7 +310,6 @@
                     checkbox.prop('checked', !checkbox.prop('checked')).change();
                 }
             });
-
             $('.product__view--search__input').on('input', function() {
                 $(this).closest('form').submit();
             });
