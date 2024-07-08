@@ -17,32 +17,41 @@
             <div class="form-holder">
                 <div class="form-content">
                     <div class="form-items">
-                        <div class="website-logo-inside">
+                        <div class="website-logo-inside" style="margin-bottom: 40px;">
                             <a href="index.html">
                                 <div class="logo">
                                     <img class="logo-size" src="frontend/login/images/logo-light.svg" alt="">
                                 </div>
                             </a>
                         </div>
-                        <h3>Get more things done with Loggin platform.</h3>
-                        <p>Access to the most powerfull tool in the entire design and web industry.</p>
+                        {{-- <h3>Get more things done with Loggin platform.</h3>
+                        <p>Access to the most powerfull tool in the entire design and web industry.</p> --}}
                         <div class="page-links">
                             <a href="login">Login</a><a href="register" class="active">Register</a>
                         </div>
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
-                            <input class="form-control" type="text" name="name" id="name"
-                                placeholder="Full Name" required>
-                            <input class="form-control" type="email" name="email" id="email"
-                                placeholder="E-mail Address" required>
-                            <input class="form-control" type="password" name="password" id="password"
-                                placeholder="Password" required>
-                            <input class="form-control" type="password" name="password_confirmation"
-                                id="password_confirmation" placeholder="password_confirmation" required>
+                            <input class="form-control" type="text" name="name" id="name" placeholder="Full Name" required>
+                            <input class="form-control" type="email" name="email" id="email" placeholder="E-mail Address" required>
+                            <input class="form-control" type="number" name="phone_number" id="phone_number" placeholder="Phone Number" required>
+                            <input class="form-control" type="text" name="address" id="address" placeholder="Address" required>
+                            
+                            <!-- Dropdown for Districts -->
+                            
+                            <select class="form-control" style="margin-bottom: 14px; color: #526489; font-size: 15px; border-radius: 6px; background-color: #fff" name="district_id" id="district_id" required>
+                                <option value="" disabled selected>Pilih Kecamatan</option>
+                                @foreach ($districts as $district)
+                                    <option value="{{ $district->id }}">{{ $district->name }}</option>
+                                @endforeach
+                            </select>
+                            
+                            <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
+                            <input class="form-control" type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirm Password" required>
                             <div class="form-button">
                                 <button type="submit" class="ibtn">Register</button>
                             </div>
                         </form>
+                        
                     </div>
                 </div>
             </div>

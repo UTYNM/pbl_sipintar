@@ -28,14 +28,14 @@
                                
                             </li>
                             <li class="header__menu--items">
-                                <a class="header__menu--link" href="peternakan">Hasil Peternakan
+                                <a class="header__menu--link" href="/peternakan">Hasil Peternakan
                                     <i class="fa-solid fa-cow fa-lg text__secondary" ></i>
                                  
                                 </a>
                   
                             </li>
                             <li class="header__menu--items">
-                                <a class="header__menu--link" href="perikanan">Hasil Perikanan 
+                                <a class="header__menu--link" href="/perikanan">Hasil Perikanan 
                                     <i class="fa-solid fa-fish-fins fa-lg text__secondary"></i>
                                   
                                 </a>

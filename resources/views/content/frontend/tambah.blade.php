@@ -83,14 +83,12 @@
                                         </div>
                                         <div class="col-12 mb-12">
                                             <div class="checkout__input--list">
-                                                <label class="contact__form--label" for="photos">Upload Gambar<span
-                                                        class="contact__form--label__star">*</span></label>
-                                                <input class="checkout__input--field border-radius-5"
-                                                    style="padding: 1rem; height: 5.5rem;" placeholder="Gambar"
-                                                    type="file" id="photos" name="photos[]" multiple accept="image/*"
-                                                    maxlength="5">
+                                                <label class="contact__form--label" for="photos">Upload Gambar<span class="contact__form--label__star">*</span></label>
+                                                <input class="checkout__input--field border-radius-5" style="padding: 1rem; height: 5.5rem;" placeholder="Gambar" type="file" id="photos" name="photos[]" multiple accept="image/*" maxlength="5">
                                             </div>
                                         </div>
+                                        
+                                        <div id="thumbnail-container" class="thumbnail-container"></div>
                                     </div>
                                     <div class="checkout__content--step__footer d-flex align-items-center"
                                         style="padding-bottom: 2rem;">
@@ -133,5 +131,61 @@
                 }
             });
         });
-    </script>
+        let selectedFiles = []; // Array to store selected files
+
+document.getElementById('photos').addEventListener('change', function(event) {
+    const files = event.target.files;
+    const thumbnailContainer = document.getElementById('thumbnail-container');
+    thumbnailContainer.innerHTML = ''; // Clear existing thumbnails
+    selectedFiles = []; // Clear selectedFiles array
+
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            const thumbnail = document.createElement('div');
+            thumbnail.classList.add('thumbnail-item');
+            thumbnail.innerHTML = `
+                <div class="thumbnail-image">
+                    <img src="${e.target.result}" alt="Thumbnail">
+                </div>
+            `;
+            thumbnailContainer.appendChild(thumbnail);
+        };
+
+        reader.readAsDataURL(file);
+        selectedFiles.push(file); // Add file to selectedFiles array
+    }
+});
+</script>
+
+<style>
+    .thumbnail-container {
+        display: flex;
+        overflow-x: auto; /* Mengaktifkan pengguliran horizontal jika melebihi lebar */
+        gap: 10px; /* Jarak antara setiap thumbnail */
+        padding: 10px 15px; /* Padding atas dan bawah */
+    }
+    .thumbnail-item {
+        flex: 0 0 auto; /* Thumbnail tidak fleksibel, tetap ukuran tetap */
+        width: 100px; /* Lebar thumbnail */
+        height: 100px; /* Tinggi thumbnail */
+        overflow: hidden; /* Gambar tidak keluar dari thumbnail */
+        position: relative; /* Untuk menempatkan tombol hapus jika diperlukan */
+        border: 1px solid #ccc; /* Garis pinggir thumbnail */
+    }
+    .thumbnail-item .thumbnail-image {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center; /* Pusatkan gambar secara horizontal */
+        align-items: center; /* Pusatkan gambar secara vertikal */
+    }
+    .thumbnail-item img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover; /* Sesuaikan gambar ke dalam thumbnail */
+    }
+</style>
 @endsection
