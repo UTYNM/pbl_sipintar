@@ -140,15 +140,13 @@
                         </div>
                         <div class="single__widget price__filter widget__bg">
                             <h2 class="widget__title h3">Harga</h2>
-                            <form class="price__filter--form" action="#">
+                            <form class="price__filter--form" method="GET" action="{{ route('perikanan.index') }}">
                                 <div class="price__filter--form__inner mb-15 d-flex align-items-center">
                                     <div class="price__filter--group">
                                         <label class="price__filter--label" for="Filter-Price-GTE2">Minimal</label>
                                         <div class="price__filter--input border-radius-5 d-flex align-items-center">
                                             <span class="price__filter--currency">Rp</span>
-                                            <input class="price__filter--input__field border-0" name="filter.v.price.gte"
-                                                id="Filter-Price-GTE2" type="number" placeholder="0" min="0"
-                                                max="250.00">
+                                            <input style="background-color: transparent" class="price__filter--input__field border-0" name="filter_price_min" id="Filter-Price-GTE2" type="number" placeholder="0" min="0">
                                         </div>
                                     </div>
                                     <div class="price__divider">
@@ -158,9 +156,7 @@
                                         <label class="price__filter--label" for="Filter-Price-LTE2">Maksimal</label>
                                         <div class="price__filter--input border-radius-5 d-flex align-items-center">
                                             <span class="price__filter--currency">Rp</span>
-                                            <input class="price__filter--input__field border-0" name="filter.v.price.lte"
-                                                id="Filter-Price-LTE2" type="number" min="0"
-                                                placeholder="100.000" max="250.00">
+                                            <input style="background-color: transparent" class="price__filter--input__field border-0" name="filter_price_max" id="Filter-Price-LTE2" type="number" placeholder="100.000" min="0">
                                         </div>
                                     </div>
                                 </div>
@@ -170,28 +166,13 @@
                         <div class="single__widget widget__bg">
                             <h2 class="widget__title h3">Lokasi</h2>
                             <ul class="widget__tagcloud">
-                                <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Air
-                                        Upas</a></li>
-                                <li class="widget__tagcloud--list"><a class="widget__tagcloud--link"
-                                        href="shop.html">Benua Kayong</a></li>
-                                <li class="widget__tagcloud--list"><a class="widget__tagcloud--link"
-                                        href="shop.html">Delta Pawan</a></li>
-                                <li class="widget__tagcloud--list"><a class="widget__tagcloud--link"
-                                        href="shop.html">Hulu Sungai</a></li>
-                                <li class="widget__tagcloud--list"><a class="widget__tagcloud--link"
-                                        href="shop.html">Jelai Hulu</a></li>
-                                <li class="widget__tagcloud--list"><a class="widget__tagcloud--link"
-                                        href="shop.html">Kendawangan</a></li>
-                                <li class="widget__tagcloud--list"><a class="widget__tagcloud--link"
-                                        href="shop.html">Manis Mata</a></li>
-                                <li class="widget__tagcloud--list"><a class="widget__tagcloud--link"
-                                        href="shop.html">Marau</a></li>
-                                <li class="widget__tagcloud--list"><a class="widget__tagcloud--link"
-                                        href="shop.html">Matan Hilir Selatan</a></li>
-                                <li class="widget__tagcloud--list"><a class="widget__tagcloud--link"
-                                        href="shop.html">Matan Hilir Utara</a></li>
-                                <li class="widget__tagcloud--list"><a class="widget__tagcloud--link"
-                                        href="shop.html">Muara Pawan</a></li>
+                                @foreach ($districts as $district)
+                                    <li class="widget__tagcloud--list">
+                                        <a class="widget__tagcloud--link" href="{{ route('perikanan.index', ['district_id' => $district->id]) }}">
+                                            {{ $district->name }}
+                                        </a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

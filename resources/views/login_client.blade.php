@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Pangan Ketapang</title>
-    <link rel="stylesheet" type="text/css" href="frontend/login/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="frontend/login/css/fontawesome-all.min.css">
-    <link rel="stylesheet" type="text/css" href="frontend/login/css/iofrm-style.css">
-    <link rel="stylesheet" type="text/css" href="frontend/login/css/iofrm-theme12.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/login/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/login/css/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/login/css/iofrm-style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/login/css/iofrm-theme12.css')}}">
 </head>
 
 <body>
@@ -44,10 +44,10 @@
             </div>
         </div>
     </div>
-    <script src="frontend/login/js/jquery.min.js"></script>
-    <script src="frontend/login/js/popper.min.js"></script>
-    <script src="frontend/login/js/bootstrap.min.js"></script>
-    <script src="frontend/login/js/main.js"></script>
+    <script src="{{ asset('frontend/login/js/jquery.min.js')}}"></script>
+    <script src="{{ asset('frontend/login/js/popper.min.js')}}"></script>
+    <script src="{{ asset('frontend/login/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('frontend/login/js/main.js')}}"></script>
     @include('sweetalert::alert')
 </body>
 
