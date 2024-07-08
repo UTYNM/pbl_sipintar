@@ -2,11 +2,11 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Frontend\BerandaController;
 use App\Http\Controllers\Frontend\PerikananController;
 use App\Http\Controllers\Frontend\PertanianController;
 use App\Http\Controllers\Frontend\PeternakanController;
 use App\Http\Controllers\Frontend\ProductController;
-use App\Http\Controllers\Frontend\BerandaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
