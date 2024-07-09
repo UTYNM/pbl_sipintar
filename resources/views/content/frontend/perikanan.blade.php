@@ -16,9 +16,8 @@
                         @foreach ($categoryTypes as $categoryType)
                             <li class="widget__form--check__list">
                                 <label class="widget__form--check__label" for="check{{ $categoryType->id }}">
-                                    <input class="widget__form--check__input"
-                                        id="check{{ $categoryType->id }}" name="type_name[]" type="checkbox"
-                                        value="{{ $categoryType->type_name }}"
+                                    <input class="widget__form--check__input" id="check{{ $categoryType->id }}"
+                                        name="type_name[]" type="checkbox" value="{{ $categoryType->type_name }}"
                                         {{ in_array($categoryType->type_name, $selectedTypeNames) ? 'checked' : '' }}>
                                     {{ $categoryType->type_name }}
                                     <span class="widget__form--checkmark"></span>
@@ -36,7 +35,9 @@
                             <label class="price__filter--label" for="Filter-Price-GTE2">Minimal</label>
                             <div class="price__filter--input border-radius-5 d-flex align-items-center">
                                 <span class="price__filter--currency">Rp</span>
-                                <input style="background-color: transparent" class="price__filter--input__field border-0" name="filter_price_min" id="Filter-Price-GTE2" type="number" placeholder="0" min="0">
+                                <input style="background-color: transparent" class="price__filter--input__field border-0"
+                                    name="filter_price_min" id="Filter-Price-GTE2" type="number" placeholder="0"
+                                    min="0">
                             </div>
                         </div>
                         <div class="price__divider">
@@ -46,7 +47,9 @@
                             <label class="price__filter--label" for="Filter-Price-LTE2">Maksimal</label>
                             <div class="price__filter--input border-radius-5 d-flex align-items-center">
                                 <span class="price__filter--currency">Rp</span>
-                                <input style="background-color: transparent" class="price__filter--input__field border-0" name="filter_price_max" id="Filter-Price-LTE2" type="number" placeholder="100.000" min="0">
+                                <input style="background-color: transparent" class="price__filter--input__field border-0"
+                                    name="filter_price_max" id="Filter-Price-LTE2" type="number" placeholder="100.000"
+                                    min="0">
                             </div>
                         </div>
                     </div>
@@ -58,7 +61,8 @@
                 <ul class="widget__tagcloud">
                     @foreach ($districts as $district)
                         <li class="widget__tagcloud--list">
-                            <a class="widget__tagcloud--link" href="{{ route('perikanan.index', ['district_id' => $district->id]) }}">
+                            <a class="widget__tagcloud--link"
+                                href="{{ route('perikanan.index', ['district_id' => $district->id]) }}">
                                 {{ $district->name }}
                             </a>
                         </li>
@@ -87,7 +91,7 @@
                     <span class="widget__filter--btn__text">Filter</span>
                 </button>
                 <div class="product__view--mode d-flex align-items-center">
-               
+
                     <div class="product__view--mode__list product__short--by align-items-center d-none d-lg-flex">
                         <label class="product__view--label">Urutkan :</label>
                         <div class="select shop__header--select">
@@ -99,26 +103,33 @@
                                         <input type="hidden" name="type_name[]" value="{{ $typeName }}">
                                     @endforeach
                                 @endif
-                    
+
                                 <select class="product__view--select" name="sort_order" id="sortOrder">
-                                    <option value="newest" {{ $sortOrder === 'newest' ? 'selected' : '' }}>Terbaru</option>
-                                    <option value="oldest" {{ $sortOrder === 'oldest' ? 'selected' : '' }}>Terlama</option>
+                                    <option value="newest" {{ $sortOrder === 'newest' ? 'selected' : '' }}>Terbaru
+                                    </option>
+                                    <option value="oldest" {{ $sortOrder === 'oldest' ? 'selected' : '' }}>Terlama
+                                    </option>
                                 </select>
                             </form>
                         </div>
                     </div>
                     <div class="product__view--mode__list product__view--search d-xl-block d-none">
-                        <form class="product__view--search__form" action="{{ route('perikanan.index') }}" method="GET">
+                        <form class="product__view--search__form" action="{{ route('perikanan.index') }}"
+                            method="GET">
                             <label>
                                 <input class="product__view--search__input border-0" name="search"
-                                    placeholder="Cari Hasil Perikanan" type="text" style="
+                                    placeholder="Cari Hasil Perikanan" type="text"
+                                    style="
                                     width: 280%;
-                                " value="{{ request('search') }}">
+                                "
+                                    value="{{ request('search') }}">
                             </label>
-                            <button class="product__view--search__btn" style="
+                            <button class="product__view--search__btn"
+                                style="
                             left: 800px;
-                        " aria-label="search btn" type="submit">
-                                <i class="fa-solid fa-magnifying-glass"></i>    
+                        "
+                                aria-label="search btn" type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </form>
                     </div>
@@ -155,7 +166,9 @@
                                         <label class="price__filter--label" for="Filter-Price-GTE2">Minimal</label>
                                         <div class="price__filter--input border-radius-5 d-flex align-items-center">
                                             <span class="price__filter--currency">Rp</span>
-                                            <input style="background-color: transparent" class="price__filter--input__field border-0" name="filter_price_min" id="Filter-Price-GTE2" type="number" placeholder="0" min="0">
+                                            <input style="background-color: transparent"
+                                                class="price__filter--input__field border-0" name="filter_price_min"
+                                                id="Filter-Price-GTE2" type="number" placeholder="0" min="0">
                                         </div>
                                     </div>
                                     <div class="price__divider">
@@ -165,7 +178,10 @@
                                         <label class="price__filter--label" for="Filter-Price-LTE2">Maksimal</label>
                                         <div class="price__filter--input border-radius-5 d-flex align-items-center">
                                             <span class="price__filter--currency">Rp</span>
-                                            <input style="background-color: transparent" class="price__filter--input__field border-0" name="filter_price_max" id="Filter-Price-LTE2" type="number" placeholder="100.000" min="0">
+                                            <input style="background-color: transparent"
+                                                class="price__filter--input__field border-0" name="filter_price_max"
+                                                id="Filter-Price-LTE2" type="number" placeholder="100.000"
+                                                min="0">
                                         </div>
                                     </div>
                                 </div>
@@ -177,7 +193,8 @@
                             <ul class="widget__tagcloud">
                                 @foreach ($districts as $district)
                                     <li class="widget__tagcloud--list">
-                                        <a class="widget__tagcloud--link" href="{{ route('perikanan.index', ['district_id' => $district->id]) }}">
+                                        <a class="widget__tagcloud--link"
+                                            href="{{ route('perikanan.index', ['district_id' => $district->id]) }}">
                                             {{ $district->name }}
                                         </a>
                                     </li>
@@ -190,48 +207,54 @@
                     <div class="shop__product--wrapper">
                         <div class="tab_content">
                             <div id="product_grid" class="tab_pane active show">
-                                <div class="product__section--inner product__section--style3__inner">
-                                    <div class="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-3 row-cols-sm-3 row-cols-2 mb--n30">
-                                        @foreach ($products as $product)
-                                            <div class="col mb-30">
-                                                <div class="product__items product__items2">
-                                                    <div class="product__items--thumbnail">
-                                                        <a class="product__items--link"
-                                                            href="{{ route('products.show', $product->id) }}">
-                                                            @if ($product->photos->isNotEmpty() && ($photo = $product->photos->first()))
-                                                                <img class="product__items--img product__primary--img"
-                                                                    src="{{ $photo->photo_url }}"
-                                                                    alt="{{ $product->product_name }}">
-                                                                <img class="product__items--img product__secondary--img"
-                                                                    src="{{ $photo->photo_url }}"
-                                                                    alt="{{ $product->product_name }}">
-                                                            @else
-                                                                <img class="product__items--img product__primary--img"
-                                                                    src="{{ asset('frontend/img/padi-1.png') }}"
-                                                                    alt="{{ $product->product_name }}">
-                                                                <img class="product__items--img product__secondary--img"
-                                                                    src="{{ asset('frontend/img/padi-1.png') }}"
-                                                                    alt="{{ $product->product_name }}">
-                                                            @endif
-                                                        </a>
-                                                    </div>
-                                                    <div
-                                                        class="product__items--content product__items2--content text-center">
-                                                        <a class="add__to--cart__btn">Lihat Detail Produk</a>
-                                                        <h3 class="product__items--content__title h4"><a
-                                                                href="{{ route('products.show', $product->id) }}">{{ $product->product_name }}</a>
-                                                        </h3>
-                                                        <div class="product__items--price">
-                                                            <span class="current__price">Rp
-                                                                {{ number_format($product->price, 0, ',', '.') }}/kg</span>
+                                @if ($products->isEmpty())
+                                    <p class="text-center">Tidak ada produk yang ditemukan.</p>
+                                @else
+                                    <div class="product__section--inner product__section--style3__inner">
+                                        <div
+                                            class="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-3 row-cols-sm-3 row-cols-2 mb--n30">
+                                            @foreach ($products as $product)
+                                                <div class="col mb-30">
+                                                    <div class="product__items product__items2">
+                                                        <div class="product__items--thumbnail">
+                                                            <a class="product__items--link"
+                                                                href="{{ route('products.show', $product->id) }}">
+                                                                @if ($product->photos->isNotEmpty() && ($photo = $product->photos->first()))
+                                                                    <img class="product__items--img product__primary--img"
+                                                                        src="{{ $photo->photo_url }}"
+                                                                        alt="{{ $product->product_name }}">
+                                                                    <img class="product__items--img product__secondary--img"
+                                                                        src="{{ $photo->photo_url }}"
+                                                                        alt="{{ $product->product_name }}">
+                                                                @else
+                                                                    <img class="product__items--img product__primary--img"
+                                                                        src="{{ asset('frontend/img/padi-1.png') }}"
+                                                                        alt="{{ $product->product_name }}">
+                                                                    <img class="product__items--img product__secondary--img"
+                                                                        src="{{ asset('frontend/img/padi-1.png') }}"
+                                                                        alt="{{ $product->product_name }}">
+                                                                @endif
+                                                            </a>
                                                         </div>
-                                                        <span class="">Stock: {{ $product->stock }}kg</span>
+                                                        <div
+                                                            class="product__items--content product__items2--content text-center">
+                                                            <a class="add__to--cart__btn">Lihat Detail Produk</a>
+                                                            <h3 class="product__items--content__title h4"><a
+                                                                    href="{{ route('products.show', $product->id) }}">{{ $product->product_name }}</a>
+                                                            </h3>
+                                                            <div class="product__items--price">
+                                                                <span class="current__price">Rp
+                                                                    {{ number_format($product->price, 0, ',', '.') }}/kg</span>
+                                                            </div>
+                                                            <span class="">Stock: {{ $product->stock }}kg</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        @endforeach
+                                            @endforeach
+                                        </div>
+
                                     </div>
-                                </div>
+                                @endif
                             </div>
                         </div>
                         <div class="pagination__area bg__gray--color">
@@ -239,63 +262,84 @@
                                 <ul class="pagination__wrapper d-flex align-items-center justify-content-center">
                                     <!-- Previous Page Link -->
                                     @if ($products->onFirstPage())
-                                        <li class="pagination__list disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
+                                        <li class="pagination__list disabled" aria-disabled="true"
+                                            aria-label="@lang('pagination.previous')">
                                             <span class="pagination__item--arrow" aria-hidden="true">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 512 512">
-                                                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292" />
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443"
+                                                    viewBox="0 0 512 512">
+                                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="48"
+                                                        d="M244 400L100 256l144-144M120 256h292" />
                                                 </svg>
                                             </span>
                                         </li>
                                     @else
                                         <li class="pagination__list">
-                                            <a href="{{ $products->previousPageUrl() }}" class="pagination__item--arrow link" rel="prev" aria-label="@lang('pagination.previous')">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 512 512">
-                                                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292" />
+                                            <a href="{{ $products->previousPageUrl() }}"
+                                                class="pagination__item--arrow link" rel="prev"
+                                                aria-label="@lang('pagination.previous')">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443"
+                                                    viewBox="0 0 512 512">
+                                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="48"
+                                                        d="M244 400L100 256l144-144M120 256h292" />
                                                 </svg>
                                             </a>
                                         </li>
                                     @endif
-                        
+
                                     <!-- Pagination Elements -->
                                     @foreach ($products->links()->elements as $element)
                                         <!-- Make three dots -->
                                         @if (is_string($element))
-                                            <li class="pagination__list disabled" aria-disabled="true"><span>{{ $element }}</span></li>
+                                            <li class="pagination__list disabled" aria-disabled="true">
+                                                <span>{{ $element }}</span></li>
                                         @endif
-                        
+
                                         <!-- Array Of Links -->
                                         @if (is_array($element))
                                             @foreach ($element as $page => $url)
                                                 @if ($page == $products->currentPage())
-                                                    <li class="pagination__list"><span class="pagination__item pagination__item--current">{{ $page }}</span></li>
+                                                    <li class="pagination__list"><span
+                                                            class="pagination__item pagination__item--current">{{ $page }}</span>
+                                                    </li>
                                                 @else
-                                                    <li class="pagination__list"><a href="{{ $url }}" class="pagination__item link">{{ $page }}</a></li>
+                                                    <li class="pagination__list"><a href="{{ $url }}"
+                                                            class="pagination__item link">{{ $page }}</a></li>
                                                 @endif
                                             @endforeach
                                         @endif
                                     @endforeach
-                        
+
                                     <!-- Next Page Link -->
                                     @if ($products->hasMorePages())
                                         <li class="pagination__list">
-                                            <a href="{{ $products->nextPageUrl() }}" class="pagination__item--arrow link" rel="next" aria-label="@lang('pagination.next')">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 512 512">
-                                                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100" />
+                                            <a href="{{ $products->nextPageUrl() }}" class="pagination__item--arrow link"
+                                                rel="next" aria-label="@lang('pagination.next')">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443"
+                                                    viewBox="0 0 512 512">
+                                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="48"
+                                                        d="M268 112l144 144-144 144M392 256H100" />
                                                 </svg>
                                             </a>
                                         </li>
                                     @else
-                                        <li class="pagination__list disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
+                                        <li class="pagination__list disabled" aria-disabled="true"
+                                            aria-label="@lang('pagination.next')">
                                             <span class="pagination__item--arrow" aria-hidden="true">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 512 512">
-                                                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100" />
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443"
+                                                    viewBox="0 0 512 512">
+                                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="48"
+                                                        d="M268 112l144 144-144 144M392 256H100" />
                                                 </svg>
                                             </span>
                                         </li>
                                     @endif
                                 </ul>
                             </nav>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </div>
