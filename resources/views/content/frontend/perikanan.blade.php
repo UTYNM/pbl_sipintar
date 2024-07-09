@@ -10,33 +10,59 @@
         </button>
         <div class="offcanvas__filter--sidebar__inner">
             <div class="single__widget widget__bg">
-                <h2 class="widget__title h3">Category Type Name</h2>
-                <ul class="widget__form--check">
-                    <li class="widget__form--check__list">
-                        <label class="widget__form--check__label" for="check1">Tanaman Pangan</label>
-                        <input class="widget__form--check__input" id="check1" type="checkbox">
-                        <span class="dget__form--checkmark"></span>
-                    </li>
-                    <li class="widget__form--check__list">
-                        <label class="widget__form--check__label" for="check2">Sayur - Sayuran</label>
-                        <input class="widget__form--check__input" id="check2" type="checkbox">
-                        <span class="widget__form--checkmark"></span>
-                    </li>
-                    <li class="widget__form--check__list">
-                        <label class="widget__form--check__label" for="check3">Buah - Buahan</label>
-                        <input class="widget__form--check__input" id="check3" type="checkbox">
-                        <span class="widget__form--checkmark"></span>
-                    </li>
-                    <li class="widget__form--check__list">
-                        <label class="widget__form--check__label" for="check4">Tanaman Perkebunan</label>
-                        <input class="widget__form--check__input" id="check4" type="checkbox">
-                        <span class="widget__form--checkmark"></span>
-                    </li>
-                    <li class="widget__form--check__list">
-                        <label class="widget__form--check__label" for="check5">Rempah - Rempahan</label>
-                        <input class="widget__form--check__input" id="check5" type="checkbox">
-                        <span class="widget__form--checkmark"></span>
-                    </li>
+                <h2 class="widget__title h3">Kategori Hasil Perikanan</h2>
+                <form id="filterForm" method="GET" action="{{ route('perikanan.index') }}">
+                    <ul class="widget__form--check">
+                        @foreach ($categoryTypes as $categoryType)
+                            <li class="widget__form--check__list">
+                                <label class="widget__form--check__label" for="check{{ $categoryType->id }}">
+                                    <input class="widget__form--check__input"
+                                        id="check{{ $categoryType->id }}" name="type_name[]" type="checkbox"
+                                        value="{{ $categoryType->type_name }}"
+                                        {{ in_array($categoryType->type_name, $selectedTypeNames) ? 'checked' : '' }}>
+                                    {{ $categoryType->type_name }}
+                                    <span class="widget__form--checkmark"></span>
+                                </label>
+                            </li>
+                        @endforeach
+                    </ul>
+                </form>
+            </div>
+            <div class="single__widget price__filter widget__bg">
+                <h2 class="widget__title h3">Harga</h2>
+                <form class="price__filter--form" method="GET" action="{{ route('perikanan.index') }}">
+                    <div class="price__filter--form__inner mb-15 d-flex align-items-center">
+                        <div class="price__filter--group">
+                            <label class="price__filter--label" for="Filter-Price-GTE2">Minimal</label>
+                            <div class="price__filter--input border-radius-5 d-flex align-items-center">
+                                <span class="price__filter--currency">Rp</span>
+                                <input style="background-color: transparent" class="price__filter--input__field border-0" name="filter_price_min" id="Filter-Price-GTE2" type="number" placeholder="0" min="0">
+                            </div>
+                        </div>
+                        <div class="price__divider">
+                            <span>-</span>
+                        </div>
+                        <div class="price__filter--group">
+                            <label class="price__filter--label" for="Filter-Price-LTE2">Maksimal</label>
+                            <div class="price__filter--input border-radius-5 d-flex align-items-center">
+                                <span class="price__filter--currency">Rp</span>
+                                <input style="background-color: transparent" class="price__filter--input__field border-0" name="filter_price_max" id="Filter-Price-LTE2" type="number" placeholder="100.000" min="0">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn price__filter--btn" type="submit">Filter</button>
+                </form>
+            </div>
+            <div class="single__widget widget__bg">
+                <h2 class="widget__title h3">Lokasi</h2>
+                <ul class="widget__tagcloud">
+                    @foreach ($districts as $district)
+                        <li class="widget__tagcloud--list">
+                            <a class="widget__tagcloud--link" href="{{ route('perikanan.index', ['district_id' => $district->id]) }}">
+                                {{ $district->name }}
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -61,19 +87,7 @@
                     <span class="widget__filter--btn__text">Filter</span>
                 </button>
                 <div class="product__view--mode d-flex align-items-center">
-                    <div class="product__view--mode__list product__short--by align-items-center d-lg-flex d-none ">
-                        <label class="product__view--label">Lihat :</label>
-                        <div class="select shop__header--select">
-                            <select class="product__view--select">
-                                <option selected value="1">8</option>
-                                <option value="2">16</option>
-                                <option value="3">42</option>
-                                <option value="4">57 </option>
-                                <option value="5">60 </option>
-                            </select>
-                        </div>
-                    </div>
-
+               
                     <div class="product__view--mode__list product__short--by align-items-center d-none d-lg-flex">
                         <label class="product__view--label">Urutkan :</label>
                         <div class="select shop__header--select">
@@ -93,28 +107,23 @@
                             </form>
                         </div>
                     </div>
-                    
-                    
-
                     <div class="product__view--mode__list product__view--search d-xl-block d-none">
                         <form class="product__view--search__form" action="{{ route('perikanan.index') }}" method="GET">
                             <label>
                                 <input class="product__view--search__input border-0" name="search"
-                                    placeholder="Cari Hasil Pertanian" type="text" value="{{ request('search') }}">
+                                    placeholder="Cari Hasil Perikanan" type="text" style="
+                                    width: 280%;
+                                " value="{{ request('search') }}">
                             </label>
-                            <button class="product__view--search__btn" aria-label="search btn" type="submit">
-                                <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg"
-                                    width="22.51" height="20.443" viewBox="0 0 512 512">
-                                    <path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"
-                                        fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448" />
-                                </svg>
+                            <button class="product__view--search__btn" style="
+                            left: 800px;
+                        " aria-label="search btn" type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>    
                             </button>
                         </form>
                     </div>
                 </div>
-                <p class="product__showing--count">Menampilkan 1 - 8 dari 20 Produk</p>
+                <p class="product__showing--count">Menampilkan {{ $products->total() }} Produk Perikanan</p>
             </div>
             <div class="row">
                 <div class="col-xl-3 col-lg-4">
@@ -177,14 +186,12 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-xl-9 col-lg-8">
                     <div class="shop__product--wrapper">
                         <div class="tab_content">
                             <div id="product_grid" class="tab_pane active show">
                                 <div class="product__section--inner product__section--style3__inner">
-                                    <div
-                                        class="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-3 row-cols-sm-3 row-cols-2 mb--n30">
+                                    <div class="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-3 row-cols-sm-3 row-cols-2 mb--n30">
                                         @foreach ($products as $product)
                                             <div class="col mb-30">
                                                 <div class="product__items product__items2">
@@ -210,7 +217,7 @@
                                                     </div>
                                                     <div
                                                         class="product__items--content product__items2--content text-center">
-                                                        <a class="add__to--cart__btn">+ Tambah Ke Keranjang</a>
+                                                        <a class="add__to--cart__btn">Lihat Detail Produk</a>
                                                         <h3 class="product__items--content__title h4"><a
                                                                 href="{{ route('products.show', $product->id) }}">{{ $product->product_name }}</a>
                                                         </h3>

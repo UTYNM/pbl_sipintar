@@ -49,6 +49,6 @@ class RegisterController extends Controller
         Alert::toast('Registration Successful', 'success')->autoClose(5000);
         Auth::login($user);
 
-        return redirect('/beranda');
+        return redirect()->route('beranda.index');
     }
 }

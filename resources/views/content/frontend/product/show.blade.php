@@ -37,14 +37,14 @@
                         <div class="product__details--info__price mb-15">
                             <span class="current__price">Rp {{ $product->price }}/Kg</span>
                         </div>
-                        <p class="text__primary"><strong>Stok: {{ $product->stock }} Kg</strong></p>
+                        <p class="text__primary"><strong>Stok: {{ $product->stock }}</strong></p>
                         <p class="product__details--info__desc mb-20">{{ $product->description }}</p>
                         <div class="product__variant--list mb-15">
                             <div class="product__details--info__meta">
                                 <p class="product__details--info__meta--list"><strong>Penjual:</strong> <span>{{ $product->seller->name }}</span></p>
                                 <p class="product__details--info__meta--list"><strong>Kategori:</strong> <span>{{ $product->category->category_name }}</span></p>
-                                <p class="product__details--info__meta--list"><strong>Alamat:</strong> <span>{{ $product->address }}</span></p>
-                                <p class="product__details--info__meta--list"><strong>No Whatsapp:</strong> <span>{{ $product->phone }}</span></p>
+                                <p class="product__details--info__meta--list"><strong>Alamat:</strong> <span>{{ $product->seller->address }}</span></p>
+                                <p class="product__details--info__meta--list"><strong>No Whatsapp:</strong> <span>{{ $product->seller->phone_number }}</span></p>
                             </div>
                         </div>
                         <div class="product__variant--list mb-15">
@@ -52,9 +52,11 @@
                                 <svg class="quickview__variant--wishlist__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
                                 Tambah Ke Favorit
                             </a>
-                            <button class="variant__buy--now__btn btn" type="submit">Hubungi Penjual</button>
+                            <button class="variant__buy--now__btn btn" type="button" onclick="window.location.href='https://wa.me/{{ $product->seller->phone_number }}'">
+                                Hubungi Penjual
+                            </button>
                         </div>
-                        <div class="quickview__social d-flex align-items-center mb-15">
+                                                <div class="quickview__social d-flex align-items-center mb-15">
                             <label class="quickview__social--title">Bagikan:</label>
                             <ul class="quickview__social--wrapper mt-0 d-flex">
                                 <li class="quickview__social--list">
@@ -117,7 +119,7 @@
                                 </a>
                             </div>
                             <div class="product__items--content product__items2--content text-center">
-                                <a class="add__to--cart__btn" href="cart.html">+ Tambah Ke Keranjang</a>
+                                <a class="add__to--cart__btn" href="cart.html">Lihat Detail Produk</a>
                                 <h3 class="product__items--content__title h4"><a href="{{ route('products.show', $relatedProduct->id) }}">{{ $relatedProduct->product_name }}</a></h3>
                                 <div class="product__items--price">
                                     <span class="current__price">Rp {{ $relatedProduct->price }}/kg</span>

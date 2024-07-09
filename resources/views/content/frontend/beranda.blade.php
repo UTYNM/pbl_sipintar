@@ -90,7 +90,7 @@
                                         </a>
                                     </div>
                                     <div class="product__items--content product__items2--content text-center">
-                                        <a class="add__to--cart__btn">+ Tambah Ke Keranjang</a>
+                                        <a class="add__to--cart__btn">Lihat Detail Produk</a>
                                         <h3 class="product__items--content__title h4">
                                             <a href="{{ route('products.show', $product->id) }}">{{ $product->product_name }}</a>
                                         </h3>
@@ -123,7 +123,7 @@
                                         </a>
                                     </div>
                                     <div class="product__items--content product__items2--content text-center">
-                                        <a class="add__to--cart__btn">+ Tambah Ke Keranjang</a>
+                                        <a class="add__to--cart__btn">Lihat Detail Produk</a>
                                         <h3 class="product__items--content__title h4">
                                             <a href="{{ route('products.show', $product->id) }}">{{ $product->product_name }}</a>
                                         </h3>
@@ -156,7 +156,7 @@
                                         </a>
                                     </div>
                                     <div class="product__items--content product__items2--content text-center">
-                                        <a class="add__to--cart__btn">+ Tambah Ke Keranjang</a>
+                                        <a class="add__to--cart__btn">Lihat Detail Produk</a>
                                         <h3 class="product__items--content__title h4">
                                             <a href="{{ route('products.show', $product->id) }}">{{ $product->product_name }}</a>
                                         </h3>
@@ -189,7 +189,7 @@
                                         </a>
                                     </div>
                                     <div class="product__items--content product__items2--content text-center">
-                                        <a class="add__to--cart__btn">+ Tambah Ke Keranjang</a>
+                                        <a class="add__to--cart__btn">Lihat Detail Produk</a>
                                         <h3 class="product__items--content__title h4">
                                             <a href="{{ route('products.show', $product->id) }}">{{ $product->product_name }}</a>
                                         </h3>
@@ -233,7 +233,7 @@
                                 </a>
                             </div>
                             <div class="product__items--content product__items2--content text-center">
-                                <a class="add__to--cart__btn">+ Tambah Ke Keranjang</a>
+                                <a class="add__to--cart__btn">Lihat Detail Produk</a>
                                 <h3 class="product__items--content__title h4">
                                     <a href="{{ route('products.show', $product->id) }}">{{ $product->product_name }}</a>
                                 </h3>

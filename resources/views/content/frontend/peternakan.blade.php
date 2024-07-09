@@ -61,19 +61,6 @@
                     <span class="widget__filter--btn__text">Filter</span>
                 </button>
                 <div class="product__view--mode d-flex align-items-center">
-                    <div class="product__view--mode__list product__short--by align-items-center d-lg-flex d-none ">
-                        <label class="product__view--label">Lihat :</label>
-                        <div class="select shop__header--select">
-                            <select class="product__view--select">
-                                <option selected value="1">8</option>
-                                <option value="2">16</option>
-                                <option value="3">42</option>
-                                <option value="4">57 </option>
-                                <option value="5">60 </option>
-                            </select>
-                        </div>
-                    </div>
-
                     <div class="product__view--mode__list product__short--by align-items-center d-none d-lg-flex">
                         <label class="product__view--label">Urutkan :</label>
                         <div class="select shop__header--select">
@@ -93,28 +80,23 @@
                             </form>
                         </div>
                     </div>
-                    
-                    
-
                     <div class="product__view--mode__list product__view--search d-xl-block d-none">
                         <form class="product__view--search__form" action="{{ route('peternakan.index') }}" method="GET">
                             <label>
                                 <input class="product__view--search__input border-0" name="search"
-                                    placeholder="Cari Hasil Pertanian" type="text" value="{{ request('search') }}">
+                                    placeholder="Cari Hasil Peternakan" type="text" style="
+                                    width: 280%;
+                                " value="{{ request('search') }}">
                             </label>
-                            <button class="product__view--search__btn" aria-label="search btn" type="submit">
-                                <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg"
-                                    width="22.51" height="20.443" viewBox="0 0 512 512">
-                                    <path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"
-                                        fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448" />
-                                </svg>
+                            <button class="product__view--search__btn" style="
+                            left: 800px;
+                        " aria-label="search btn" type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>    
                             </button>
                         </form>
                     </div>
                 </div>
-                <p class="product__showing--count">Menampilkan 1 - 8 dari 20 Produk</p>
+                <p class="product__showing--count">Menampilkan {{ $products->total() }} Hasil Pertanian</p>
             </div>
             <div class="row">
                 <div class="col-xl-3 col-lg-4">
@@ -210,7 +192,7 @@
                                                     </div>
                                                     <div
                                                         class="product__items--content product__items2--content text-center">
-                                                        <a class="add__to--cart__btn">+ Tambah Ke Keranjang</a>
+                                                        <a class="add__to--cart__btn">Lihat Detail Produk</a>
                                                         <h3 class="product__items--content__title h4"><a
                                                                 href="{{ route('products.show', $product->id) }}">{{ $product->product_name }}</a>
                                                         </h3>

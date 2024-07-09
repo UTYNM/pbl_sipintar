@@ -14,23 +14,23 @@ use Illuminate\Support\Facades\Storage;
 class ProductController extends Controller
 {
     public function create()
-{
-    $categories = Category::all(); // Mengambil semua kategori dari database
-    $category_types = CategoryType::all(); // Mengambil semua sub kategori dari database
-    return view('content/frontend/tambah', compact('categories', 'category_types'));
-}
+    {
+        $categories = Category::all(); // Mengambil semua kategori dari database
+        $category_types = CategoryType::all(); // Mengambil semua sub kategori dari database
+        return view('content.frontend.product.create', compact('categories', 'category_types'));
+    }
 
-public function getCategoryTypes($categoryId)
-{
-    $categoryTypes = CategoryType::where('category_id', $categoryId)->get();
-    return response()->json($categoryTypes);
-}
+    public function getCategoryTypes($categoryId)
+    {
+        $categoryTypes = CategoryType::where('category_id', $categoryId)->get();
+        return response()->json($categoryTypes);
+    }
 
     public function index()
     {
         $user = Auth::user(); // Mendapatkan informasi pengguna yang sedang masuk
-        $products = Product::where('user_id', $user->id)->get(); // Mengambil produk yang dimiliki oleh pengguna
-        return view('content.frontend.akun', compact('products'));
+        $products = Product::where('user_id', $user->id)->with('photos', 'category')->get(); // Mengambil produk yang dimiliki oleh pengguna beserta foto dan kategori
+        return view('content.frontend.product.index', compact('products'));
     }
 
     public function store(Request $request)
@@ -127,6 +127,16 @@ public function getCategoryTypes($categoryId)
         return $filename;
     }
 
+    public function edit($id)
+    {
+        $product = Product::findOrFail($id);
+        $categories = Category::all();
+        $category_types = CategoryType::all();
+
+        return view('content.frontend.product.edit', compact('product', 'categories', 'category_types'));
+    }
+
+
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -179,7 +189,7 @@ public function getCategoryTypes($categoryId)
             ->limit(5)
             ->get();
 
-        return view('content/frontend/detail_produk', compact('product', 'relatedProducts'));
+        return view('content.frontend.product.show', compact('product', 'relatedProducts'));
     }
     public function destroy($id)
     {

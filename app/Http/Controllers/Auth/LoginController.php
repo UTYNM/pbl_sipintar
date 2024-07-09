@@ -26,7 +26,8 @@ class LoginController extends Controller
         if (Auth::attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
             Alert::toast('Login Successful', 'success')->autoClose(5000);
-            return redirect()->intended('/beranda');
+            return redirect()->route('beranda.index');
+           
         }
 
         Alert::toast('Login Failed, Invalid credentials. Please try again.', 'error')->autoClose(5000);
@@ -42,6 +43,6 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect()->route('login');
     }
 }
