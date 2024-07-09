@@ -239,14 +239,20 @@
                                                         <div
                                                             class="product__items--content product__items2--content text-center">
                                                             <a class="add__to--cart__btn">Lihat Detail Produk</a>
-                                                            <h3 class="product__items--content__title h4"><a
-                                                                    href="{{ route('products.show', $product->id) }}">{{ $product->product_name }}</a>
+                                                            <h3 class="product__items--content__title h4">
+                                                                <a href="{{ route('products.show', $product->id) }}">
+                                                                    @if(strlen($product->product_name) > 25)
+                                                                        {{ substr($product->product_name, 0, 25) . '...' }}
+                                                                    @else
+                                                                        {{ $product->product_name }}
+                                                                    @endif
+                                                                </a>
                                                             </h3>
                                                             <div class="product__items--price">
                                                                 <span class="current__price">Rp
-                                                                    {{ number_format($product->price, 0, ',', '.') }}/kg</span>
+                                                                    {{ number_format($product->price, 0, ',', '.') }}</span>
                                                             </div>
-                                                            <span class="">Stock: {{ $product->stock }}kg</span>
+                                                            <span class="">Stock: {{ $product->stock }}</span>
                                                         </div>
                                                     </div>
                                                 </div>

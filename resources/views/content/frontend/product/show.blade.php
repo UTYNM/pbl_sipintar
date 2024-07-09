@@ -35,7 +35,7 @@
                     <form action="#">
                         <h2 class="product__details--info__title mb-15">{{ $product->product_name }}</h2>
                         <div class="product__details--info__price mb-15">
-                            <span class="current__price">Rp {{ $product->price }}/Kg</span>
+                            <span class="current__price">Rp {{ number_format($product->price, 0, ',', '.') }}</span>
                         </div>
                         <p class="text__primary"><strong>Stok: {{ $product->stock }}</strong></p>
                         <p class="product__details--info__desc mb-20">{{ $product->description }}</p>
@@ -48,10 +48,10 @@
                             </div>
                         </div>
                         <div class="product__variant--list mb-15">
-                            <a class="variant__wishlist--icon mb-15" href="wishlist.html" title="Add to wishlist">
+                            {{-- <a class="variant__wishlist--icon mb-15" href="wishlist.html" title="Add to wishlist">
                                 <svg class="quickview__variant--wishlist__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
                                 Tambah Ke Favorit
-                            </a>
+                            </a> --}}
                             <button class="variant__buy--now__btn btn" type="button" onclick="window.location.href='https://wa.me/{{ $product->seller->phone_number }}'">
                                 Hubungi Penjual
                             </button>
@@ -120,11 +120,19 @@
                             </div>
                             <div class="product__items--content product__items2--content text-center">
                                 <a class="add__to--cart__btn" href="cart.html">Lihat Detail Produk</a>
-                                <h3 class="product__items--content__title h4"><a href="{{ route('products.show', $relatedProduct->id) }}">{{ $relatedProduct->product_name }}</a></h3>
+                                <h3 class="product__items--content__title h4">
+                                    <a href="{{ route('products.show', $relatedProduct->id) }}">
+                                        @if(strlen($relatedProduct->product_name) > 25)
+                                            {{ substr($relatedProduct->product_name, 0, 25) . '...' }}
+                                        @else
+                                            {{ $relatedProduct->product_name }}
+                                        @endif
+                                    </a>
+                                </h3>
                                 <div class="product__items--price">
-                                    <span class="current__price">Rp {{ $relatedProduct->price }}/kg</span>
+                                    <span class="current__price">Rp {{ $relatedProduct->price }}</span>
                                 </div>
-                                <span class="">Stock: {{ $relatedProduct->stock }}kg</span>
+                                <span class="">Stock: {{ $relatedProduct->stock }}</span>
                             </div>
                         </div>
                     </div>
@@ -135,6 +143,20 @@
         </div>
     </div>
 </section>
-<!-- End product section -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var descriptionElement = document.querySelector('.product__details--info__desc');
+
+        // Mendapatkan teks deskripsi produk dari elemen
+        var descriptionText = descriptionElement.textContent;
+
+        // Ganti karakter '\n' (baris baru) dengan '<br>' untuk mempertahankan format paragraf
+        var formattedText = descriptionText.replace(/\n/g, '<br>');
+
+        // Memasukkan teks yang sudah diformat kembali ke dalam elemen
+        descriptionElement.innerHTML = formattedText;
+    });
+</script>
+
 @endsection
 

@@ -53,7 +53,8 @@ class PerikananController extends Controller
             $products = $productsQuery->orderBy('created_at', 'asc')->paginate(12);
         }
         
-        $districts = District::all(); // Ambil semua kecamatan untuk ditampilkan di view
+        $districts = District::orderBy('name', 'asc')->get(); // Ambil dan urutkan semua kecamatan untuk ditampilkan di view
+
     
         return view('content.frontend.perikanan', compact('products', 'categoryTypes', 'selectedTypeNames', 'searchQuery', 'sortOrder', 'minPrice', 'maxPrice', 'districts'));
     }
